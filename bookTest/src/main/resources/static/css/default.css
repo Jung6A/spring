@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+ul{
+	list-style: none;
+}
+#wrap{
+	width: 850px;
+	margin: 0 auto;
+}
+#wrap h2{
+	padding: 40px 0;
+}
+#mainTitle{
+	position: relative;
+	width: 100%;
+	padding: 10px;
+}
+#enroll{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	text-decoration: none;
+	color: inherit;
+}
+#enroll:hover{
+	font-weight: 700;
+	color: cornflowerblue;
+}
+#bookListWarp{
+	padding: 15px;
+}
+#bookList{
+	width: 100%;
+}
+#bookList .blist{
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+}
+#bookList li:last-child{
+	border-bottom: 0px;
+}
+.title{
+	width: 40%;
+}
+.auth{
+	width: 20%;
+}
+.bookCode{
+	width: 20%;
+}
+.category{
+	width: 20%;
+}

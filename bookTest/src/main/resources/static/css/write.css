@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#home{
+	padding-top: 20px;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+a:hover{
+	font-weight: 600;
+	color: cornflowerblue;
+}
+#wrap{
+	width: 400px;
+	margin: 0 auto;
+}
+#enrollCount{
+	padding: 15px;
+}
+#formWrap{
+	width: 100%;
+	padding: 10px;
+}
+.inputField{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 7px 0;
+}
+.inputField input{
+	width: 300px;
+	height: 35px;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid gray;
+}
+.inputField input:focus{
+	outline: none;
+	border-bottom: 2px solid steelgray;
+}
+#bt{
+	width: 80%;
+	border: 0;
+	background: cornflowerblue;
+	color: snow;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 7px 0;
+	border-radius: 10px;
+	cursor: pointer;
+}
