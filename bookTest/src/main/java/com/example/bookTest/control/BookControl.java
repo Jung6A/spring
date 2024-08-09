@@ -55,5 +55,22 @@ public class BookControl {
 		
 		return new ModelAndView("book/view").addObject("book",data);
 	}
+	
+	@GetMapping("book/delete")
+	public String bookRemove(@RequestParam("id") int bid) {
+		
+		bookService.remove(bid);
+		return "redirect:/";
+		
+		//return "<script> alert('삭제되었습니다.'); location.href='/';</script>";
+	}
+	
+	@GetMapping("book/update")
+	public String bookUpdate(@ModelAttribute BookDTO bookdto, @RequestParam("id") int id) {
+		bookdto.setBookId(id);
+		bookService.update(bookdto);
+		
+		return "redirect:/book/view?id="+id; //수정 도서의 상세페이지 이동
+	}
 
 }

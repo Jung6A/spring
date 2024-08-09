@@ -55,4 +55,15 @@ private final JdbcTemplate jt;
 		CoffeeDTO data=jt.queryForObject(sql, rowMap, id);
 		return data;
 	}
+	
+	public void delete(int cid) {
+		String sql="delete from coffee where coffee_id=?";
+		
+		jt.update(sql, cid);
+	}
+
+	public void update(CoffeeDTO coffeedto) {
+		String sql="update coffee set item_name=?, price=?, decaffein=? where coffee_id=?";
+		jt.update(sql, coffeedto.getItemName(), coffeedto.getPrice(), coffeedto.isDecaffein(), coffeedto.getCoffeeId());
+	}
 }

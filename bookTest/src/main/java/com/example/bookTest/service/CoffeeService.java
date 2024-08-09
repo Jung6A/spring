@@ -34,4 +34,13 @@ public class CoffeeService {
 		}
 		return null;
 	}
+	
+	public void remove(int cid) {
+		coffeedao.delete(cid);
+	}
+
+	public void update(CoffeeDTO coffeedto) {
+		coffeedao.update(coffeedto);
+		
+	}
 }

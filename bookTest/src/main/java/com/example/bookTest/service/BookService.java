@@ -38,4 +38,13 @@ public class BookService {
 		}
 		return null; //id 패러미터 없이 /book/view 주소 요청 들어온다면 null 반환
 	}
+	
+	public void remove(int bid) {
+		bookdao.delete(bid);
+	}
+
+	public void update(BookDTO bookdto) {
+		bookdao.update(bookdto);
+	}
+	
 }

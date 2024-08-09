@@ -62,6 +62,19 @@ public class BookDAO {
 		jt.update(sql, bookdto.getBookTitle(), bookdto.getBookAuthor(), bookdto.getBookPrice(), bookdto.getBookPage(), bookdto.getPublisher());
 	}
 	
+	//도서 삭제
+	public void delete(int bid) {
+		String sql="delete from book where book_id=?";
+		
+		jt.update(sql, bid);
+	}
+	
+	//수정 도서 정보 데이터베이스에 반영
+	public void update(BookDTO bookdto) {
+		String sql="update book set book_title=?, book_author=?, book_price=?, book_page=?, publisher=? where book_id=?";
+		jt.update(sql, bookdto.getBookTitle(), bookdto.getBookAuthor(), bookdto.getBookPrice(), bookdto.getBookPage(), bookdto.getPublisher(), bookdto.getBookId());
+	}
+	
 	public class BookDTORowMapper implements RowMapper<BookDTO> {
 
 		@Override
@@ -77,6 +90,6 @@ public class BookDAO {
 			
 			return bookdto;
 		}
-		
 	}
+
 }
