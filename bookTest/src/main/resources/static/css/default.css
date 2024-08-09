@@ -46,6 +46,13 @@ ul{
 #bookList li:last-child{
 	border-bottom: 0px;
 }
+.blist a{
+	color: inherit;
+	text-decoration: none;
+}
+.blist a:hover{
+	color: cornflowerblue;
+}
 .title{
 	width: 40%;
 }

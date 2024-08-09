@@ -27,4 +27,11 @@ public class CoffeeService {
 	public List<CoffeeDTO> selectAll() {
 		return coffeedao.select();
 	}
+	
+	public CoffeeDTO getCoffee(int id) {
+		if(id!=0) {
+			return coffeedao.findId(id);
+		}
+		return null;
+	}
 }

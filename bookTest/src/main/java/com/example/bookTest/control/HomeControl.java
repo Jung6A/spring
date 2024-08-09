@@ -11,7 +11,7 @@ import com.example.bookTest.DTO.BookInfoDTO;
 import com.example.bookTest.DTO.InfoDTO;
 
 @Controller
-public class HomeController {
+public class HomeControl {
 	
 	//요청 주소와 메서드를 매핑(연결) 시켜줌
 	@GetMapping("/home")

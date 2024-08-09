@@ -29,4 +29,13 @@ public class BookService {
 	public List<BookDTO> selectAll() {
 		return bookdao.select();
 	}
+	
+	//도서 상세 정보 가져오기- id 패러미터 값 DAO에 넘겨 조회 후 결과를 받아 control에 넘기기
+	public BookDTO getBook(int id) {
+		
+		if(id!=0) { //id 값이 존재한다면 DAO를 통해 조회
+			return bookdao.findId(id);
+		}
+		return null; //id 패러미터 없이 /book/view 주소 요청 들어온다면 null 반환
+	}
 }

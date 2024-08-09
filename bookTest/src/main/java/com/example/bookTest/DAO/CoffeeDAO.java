@@ -46,7 +46,13 @@ private final JdbcTemplate jt;
 			coffeedto.setCoffeeId(rs.getInt("coffee_id"));
 			
 			return coffeedto;
-		}
-		
+		}	
+	}
+	
+	public CoffeeDTO findId(int id) {
+		String sql="select * from coffee where coffee_id=?";
+		CoffeeDTORowMapper rowMap=new CoffeeDTORowMapper();
+		CoffeeDTO data=jt.queryForObject(sql, rowMap, id);
+		return data;
 	}
 }

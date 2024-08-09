@@ -19,7 +19,7 @@
 			<ul id="bookList">
 				<c:forEach var="row" items="${list}">
 					<li class="blist">
-						<span class="name">${row.itemName}</span>
+						<span class="name"><a href="/coffeeView?id=${row.coffeeId}">${row.itemName}</a></span>
 						<span class="price">${row.price}원</span>
 						<span class="decaffein">
 							${row.decaffein ? '디카페인 있음' : '디카페인 없음'}
