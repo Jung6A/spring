@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -25,6 +26,7 @@ public class GamePostControl {
 	@GetMapping("/m")
 	public String index(Model model) {
 		
+		model.addAttribute("mList",gamePostService.list());
 		
 		return "game/post/index";
 	}
@@ -36,7 +38,7 @@ public class GamePostControl {
 		}
 		
 		GamePostDto dto = new GamePostDto();		
-		String name = ((GameMemberDto)session.getAttribute("user")).getNickName();
+		String name = ((GameMemberDto)session.getAttribute("user")).getNick_name();
 		dto.setWriter(name);
 		
 		model.addAttribute("gamePostDto",dto);
@@ -53,5 +55,14 @@ public class GamePostControl {
 		}
 		gamePostService.write(gamePostDto);
 		return "redirect:/gamePost/m";
+	}
+	
+	@GetMapping("/view{id}")
+	public String view(@PathVariable("id") int id, Model model) {
+		
+		GamePostDto dto=gamePostService.findById(id);
+		model.addAttribute("gamePostDto", dto);
+		
+		return "game/post/detail";
 	}
 }

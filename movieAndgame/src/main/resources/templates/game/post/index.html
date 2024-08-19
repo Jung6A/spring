@@ -18,12 +18,17 @@
 				
 		<div id="section_middle">
 			<table id="reviewList">
-				<tr th:each="row : ${reviewList}">
-					<td class="num" th:text="${row.review_id}"></td>
-					<td class="title">
-						<a th:href="@{'/movieMenu/view/'+${row.review_id}}" th:text="${row.title}"></a>
+				<tr>
+					<th>제목</th>
+					<th>게임</th>
+					<th>작성일</th>
+				</tr>
+				<tr th:each="row : ${mList}">
+					<td>
+					<a th:href="'/gamePost/view'+${row.post_id}" th:text="${row.title}"></a>
 					</td>
-					<td class="date" th:text="${temporals.format(row.write_date,'yyyy-MM-dd')}"></td>
+					<td th:text="${row.game_name}"></td>
+					<td th:text="${#temporals.format(row.write_date,'yyyy-MM-dd')}"></td>
 				</tr>
 			</table>
 		</div>		
